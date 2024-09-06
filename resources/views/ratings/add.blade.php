@@ -1,13 +1,13 @@
 @extends('layouts.app')
 @section('content')
 
-<div class="container mt-5">
-    <h2>Add New Rating</h2>
+<div>
+    <h1>Insert Rating</h1>
 
     <form method="POST" action="{{ route('ratings.store') }}">
         @csrf
         <div>
-            <label for="author_id">Book Author:</label>
+            <label for="author_id">Book Author :</label>
             <select name="author_id" id="author_id">
                 <option value="">-- Select Author --</option>
                 @foreach($authors as $author)
@@ -19,7 +19,7 @@
             @enderror
         </div>
         <div>
-            <label for="book_id">Book Name:</label>
+            <label for="book_id">Book Name :</label>
             <select name="book_id" id="book_id">
                 <option value="">-- Select Book --</option>
                 @foreach($books as $book)
@@ -30,8 +30,8 @@
                 <small>{{ $message }}</small>
             @enderror
         </div>
-        <div class="mb-3">
-            <label for="rating">Rating (1-10):</label>
+        <div>
+            <label for="rating">Rating :</label>
             <select name="rating" id="rating">
                 @for($i = 1; $i <= 10; $i++)
                     <option value="{{ $i }}">{{ $i }}</option>
@@ -41,7 +41,7 @@
                 <small>{{ $message }}</small>
             @enderror
         </div>
-        <button type="submit">Submit Rating</button>
+        <button type="submit">Submit</button>
     </form>
 </div>
 @endsection

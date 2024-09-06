@@ -1,10 +1,8 @@
 @extends('layouts.app')
 @section('content')
-<div class="container mt-5">
-    <h2 class="mb-4">Top 10 Most Famous Authors</h2>
-
-    <!-- Table -->
-    <table class="table table-striped">
+<div>
+    <h1>Top 10 Most Famous Authors</h1>
+    <table>
         <thead>
             <tr>
                 <th>No</th>
@@ -21,7 +19,7 @@
                 </tr>
             @empty
                 <tr>
-                    <td colspan="3" class="text-center">No authors found</td>
+                    <td colspan="3">No authors found</td>
                 </tr>
             @endforelse
         </tbody>

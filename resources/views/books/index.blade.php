@@ -1,11 +1,10 @@
 @extends('layouts.app')
 @section('content')
 <div>
-    <h1>Books List</h1>
     <form method="GET" action="{{ route('books') }}">
         <div>
             <div>
-                <label for="list_show">List Shown:</label>
+                <label for="list_show">List shown :</label>
                 <select name="list_show" id="list_show" onchange="this.form.submit()">
                     @for($i = 10; $i <= 100; $i += 10)
                         <option value="{{ $i }}" {{ $limit == $i ? 'selected' : '' }}>
@@ -16,7 +15,7 @@
             </div>
         </div>
         <div>
-            <label for="search">Search: </label>
+            <label for="search">Search : </label>
             <input type="text" name="search" id="search" value="{{ $search }}" placeholder="Enter book name or author" onchange="this.form.submit()">
         </div>
     </form>
@@ -50,7 +49,7 @@
         </tbody>
     </table>
     @if(session('success'))
-        <div>
+        <div class="message">
             {{ session('success') }}
         </div>
     @endif
